@@ -1,0 +1,78 @@
+/* ===== Sidebar submenu animation ===== */
+
+body {
+    margin: 0;
+    background: #fff;
+}
+
+.nav .collapse {
+    transition: height 0.3s ease;
+}
+.nav .collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+/* Menu con */
+.nav .collapse .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 0;
+    transition: all 0.25s ease;
+}
+
+/* Hover menu con */
+.nav .collapse .nav-link:hover {
+    color: #0d6efd;
+    transform: translateX(6px);
+}
+
+/* Menu cha hover */
+.nav .nav-link {
+    border-radius: 8px;
+    transition: background-color 0.25s ease;
+}
+
+.nav .nav-link:hover {
+    background-color: #f1f5ff;
+}
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar-header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-header span {
+    transition: opacity 0.2s ease;
+}
+
+.sidebar.collapsed span {
+    opacity: 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    white-space: nowrap;
+}
+
+.nav-link i {
+    font-size: 1.2rem;
+}

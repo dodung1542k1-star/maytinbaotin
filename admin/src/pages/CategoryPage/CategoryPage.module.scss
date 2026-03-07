@@ -1,0 +1,181 @@
+// Biến dùng chung để dễ quản lý màu sắc
+$primary: #1677ff;
+$danger: #ff4d4f;
+$success: #22c55e;
+$border: #eee;
+$bg-light: #fafafa;
+$text-muted: #888;
+
+.wrapper {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+// --- HEADER & ACTIONS ---
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    span {
+        font-size: 13px;
+        color: $text-muted;
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: opacity 0.2s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &.primary {
+        background: $primary;
+        color: #fff;
+    }
+
+    &.danger {
+        background: $danger;
+        color: #fff;
+    }
+
+    &.more {
+        background: $success;
+        color: white;
+    }
+
+    &.outline {
+        background: transparent;
+        border: 1px solid #ddd;
+        color: #333;
+    }
+}
+
+// --- FILTER ---
+.filter {
+    display: flex;
+    gap: 10px;
+
+    input {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        outline: none;
+
+        &:focus {
+            border-color: $primary;
+        }
+    }
+}
+
+// --- TABLE ---
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid $border;
+    }
+
+    th {
+        text-align: left;
+        background: $bg-light;
+        font-weight: 600;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .center-tick {
+        text-align: center;
+        // Dùng cho dấu tick xanh
+    }
+}
+
+.edit {
+    background: $primary;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+// --- PAGINATION ---
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+    .left {
+        display: flex;
+        align-items: center;
+
+        button {
+            padding: 6px 12px;
+            margin-right: 4px;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+
+            &.active {
+                background: $primary;
+                color: #fff;
+                border-color: $primary;
+            }
+        }
+
+        span {
+            margin: 0 8px;
+            color: $text-muted;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+
+        select {
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    }
+}

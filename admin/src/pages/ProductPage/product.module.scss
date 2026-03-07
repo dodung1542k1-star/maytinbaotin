@@ -1,0 +1,293 @@
+$primary-color: #1677ff;
+$danger-color: #ff4d4f;
+$success-color: #22c55e;
+$info-color: #17a2b8;
+$dark-bg: #1f2d3d;
+$border-color: #e5e7eb;
+$text-muted: #888;
+.wrapper {
+    padding: 20px;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        h2 { margin: 0; font-size: 24px; color: #333; }
+    }
+
+    .container {
+        grid-template-columns: 1fr 350px; // Chia 2 cột
+        gap: 20px;
+    }
+
+    .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        h3 { margin-top: 0; margin-bottom: 15px; font-size: 16px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    }
+
+    .formGroup {
+        margin-bottom: 15px;
+        label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 14px; }
+        input, select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            &:focus { outline: none; border-color: #007bff; }
+        }
+        textarea{
+            height: 200px;
+            width: 100%;
+        }
+    }
+
+    .row {
+        display: flex;
+        gap: 15px;
+        .col { flex: 1; }
+    }
+
+    .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        label { margin: 0; font-size: 14px; cursor: pointer; }
+        input { cursor: pointer; width: 16px; height: 16px; }
+    }
+
+    .btn {
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        &.save { background: #007bff; color: #fff; margin-right: 10px; }
+        &.save-continue { background: #28a745; color: #fff; }
+    }
+
+    .image-placeholder {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: center;
+        border-radius: 4px;
+        color: #666;
+    }
+}
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.tabs {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+
+    .tab {
+        background: none;
+        border: none;
+        padding: 8px 0;
+        cursor: pointer;
+        font-weight: 500;
+        color: #888;
+
+        &.active {
+            color: #1677ff;
+            border-bottom: 2px solid #1677ff;
+        }
+    }
+}
+
+.image-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        background: #f5f5f5;
+        padding: 12px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    td {
+        padding: 12px;
+        text-align: center;
+        background: #f0f0f0;
+    }
+}
+
+.thumb {
+    width: 120px;
+    border: 2px solid #4cd964;
+    border-radius: 4px;
+}
+
+.btn-edit {
+    background: #1677ff;
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background: #ff3b3b;
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    color: #666;
+}
+
+.refresh {
+    border: none;
+    background: #f0f0f0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.input-seo-active {
+    padding: 4px 8px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    background-color: #fff;
+}
+
+.text-seo {
+    display: inline-block;
+    padding: 5px 0;
+    color: #555;
+}
+
+.btn-edit.active {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+// Thêm hiệu ứng animation khi hiện ra
+@keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0; // Nếu có Sidebar, hãy chỉnh lại thành chiều rộng Sidebar (vd: 250px)
+    right: 0;
+    background: #ffffff;
+    padding: 12px 24px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); // Đổ bóng ngược lên trên
+    z-index: 1000;
+    border-top: 1px solid $border-color;
+    animation: slideUp 0.4s ease-out; // Hiệu ứng trượt từ dưới lên
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-title {
+        font-weight: 600;
+        color: #444;
+        font-size: 14px;
+        // Ẩn tên sản phẩm trên mobile cho gọn
+        @media (max-width: 768px) { display: none; }
+    }
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+    .btn {
+        min-width: 120px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &.save {
+            background-color: $primary-color;
+            &:hover { background-color: darken($primary-color, 10%); }
+        }
+
+        &.save-continue {
+            background-color: $success-color;
+            &:hover { background-color: darken($success-color, 10%); }
+        }
+    }
+}
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-top: 1px solid #eee;
+
+    // Trạng thái mặc định: Ẩn dưới màn hình
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); // Hiệu ứng trượt mượt
+
+    // Trạng thái khi cuộn xuống (Kích hoạt qua JS)
+    &.visible {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+// Chỉnh lại nút bấm cho đẹp hơn trên thanh sticky
+.header-actions {
+    .btn {
+        margin-left: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        
+        &.save {
+            background-color: #1677ff;
+        }
+        &.save-continue {
+            background-color: #52c41a;
+        }
+    }
+}

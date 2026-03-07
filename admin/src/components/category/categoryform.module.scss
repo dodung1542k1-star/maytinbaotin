@@ -1,0 +1,272 @@
+// --- VARIABLES & MIXINS ---
+$primary-color: #1677ff;
+$danger-color: #ff4d4f;
+$success-color: #22c55e;
+$info-color: #17a2b8;
+$dark-bg: #1f2d3d;
+$border-color: #e5e7eb;
+$text-muted: #888;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+    padding-bottom: 100px; // Chừa khoảng trống cho thanh actions-bar sticky
+    position: relative;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    border-radius: 8px;
+
+    h2, h3 {
+        margin: 0;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    span {
+        font-size: 13px;
+        color: $text-muted;
+    }
+}
+
+// --- COMMON COMPONENTS ---
+.box {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+    
+    .boxHeader {
+        padding: 14px 18px;
+        font-weight: 600;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .boxBody {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+.btn {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    color: white;
+
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    &.primary, &.save { background: $primary-color; }
+    &.danger, &.delete { background: $danger-color; }
+    &.more { background: $success-color; }
+    &.save-continue { background: $info-color; }
+    &.outline {
+        background: transparent;
+        border: 1px solid #ddd;
+        color: #333;
+    }
+}
+
+// --- FORM GROUPS ---
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+
+    label {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    input, textarea, select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        outline: none;
+
+        &:focus {
+            border-color: $primary-color;
+        }
+    }
+
+    textarea {
+        height: 100px;
+        resize: vertical;
+    }
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+
+    input { cursor: pointer; }
+    label { cursor: pointer; font-size: 14px; }
+}
+
+// --- SPECIFIC SECTIONS ---
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.filter {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+
+    input {
+        flex: 1;
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    th {
+        text-align: left;
+        background: #fafafa;
+        font-weight: 600;
+    }
+
+    .center { text-align: center; }
+    .center-tick { 
+        text-align: center;
+        color: $primary-color; 
+    }
+}
+
+.edit {
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    .left {
+        display: flex;
+        align-items: center;
+    }
+
+    button {
+        padding: 6px 12px;
+        margin-right: 4px;
+        border: 1px solid #ddd;
+        background: #fff;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &.active {
+            background: $primary-color;
+            color: #fff;
+            border-color: $primary-color;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+
+        select {
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    }
+}
+
+// --- EXTRA UTILITIES ---
+.uploadBox {
+    border: 2px dashed #ccc;
+    padding: 30px;
+    text-align: center;
+    color: #888;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:hover { border-color: $primary-color; }
+}
+
+.editorWrapper {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .editor {
+        min-height: 200px;
+        padding: 10px;
+        background: #fff;
+    }
+}
+
+// --- STICKY ACTIONS BAR ---
+.actions-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $dark-bg;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+
+    .actions-content {
+        display: flex;
+        gap: 12px;
+    }
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}

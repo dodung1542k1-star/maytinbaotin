@@ -1,0 +1,33 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@payos/node": "^2.0.4",
+    "archiver": "^7.0.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "elfinder": "^0.5.2",
+    "elfinder-node": "^2.1.1",
+    "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
+    "fs-extra": "^11.3.3",
+    "gm": "^1.25.1",
+    "image-size": "^2.0.2",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "mysql2": "^3.17.0",
+    "serve-index": "^1.9.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
